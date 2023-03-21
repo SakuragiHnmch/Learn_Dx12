@@ -1,14 +1,11 @@
 cmake_minimum_required(VERSION 3.23)
 project(learn_dx12)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_WIN32_EXECUTABLE TRUE)
 
-file(GLOB sources src/*.cpp)
-
-include_directories(3rd/DirectXHeaders/include)
-include_directories(3rd/dxc/include)
-
-link_directories(3rd/dxc/lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Common/Include)
 
 add_subdirectory(Chapters)
 add_subdirectory(Common)
+add_subdirectory(3rd)
